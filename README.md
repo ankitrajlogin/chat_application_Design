@@ -134,9 +134,27 @@ Stores pinned messages for a group or channel.
   - message_id → Messages.message_id
   - pinned_by → Users.user_id
 
+
+
+- Messages (message_id PK)
+-    |
+-    |---< linked to >--- Media (media_id PK)   [optional]
+-    |
+-    |---< linked to >--- Reactions (reaction_id PK, message_id FK)
+-    |
+-    |---< linked to >--- PinnedMessages (id PK, message_id FK)
+
+
+
 ## Summary of Connections:
 
 - Users can send messages, react to messages, upload media, and be part of chats.
 - Chats are owned by a user (creator), and users can be members of group chats or channels.
 - Messages belong to chats and can have media or reactions.
 - Pinned messages are linked to specific messages within a chat.
+
+
+
+
+
+
