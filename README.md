@@ -135,14 +135,15 @@ Stores pinned messages for a group or channel.
   - pinned_by → Users.user_id
 
 
+### Table Relationships Overview
 
-- Messages (message_id PK)
--    |
--    |---< linked to >--- Media (media_id PK)   [optional]
--    |
--    |---< linked to >--- Reactions (reaction_id PK, message_id FK)
--    |
--    |---< linked to >--- PinnedMessages (id PK, message_id FK)
+- **Messages** (message_id PK)
+    - |
+    - |---< linked to >--- **Media** (media_id PK) [optional]
+    - |
+    - |---< linked to >--- **Reactions** (reaction_id PK, message_id FK)
+    - |
+    - |---< linked to >--- **PinnedMessages** (id PK, message_id FK)
 
 
 
